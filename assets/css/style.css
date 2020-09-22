@@ -1,5 +1,7 @@
-.jumbotron {
+.header {
     color: white;
     text-align: center;
-   
+   padding: 15px;
+   margin-bottom: -30px;
+   background-color: #2f2f2f;
 }
