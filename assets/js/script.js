@@ -46,17 +46,6 @@ function forecast(city) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 })
 
 // use this calc to change the temp to F
