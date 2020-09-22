@@ -58,3 +58,8 @@ function forecast(city) {
 
 
 })
+
+// use this calc to change the temp to F
+// $(".high-" + i).text("High: " + Math.floor((response.daily[i].temp.max - 273.15) * 9/5 + 32) + "\xB0");
+// response.daily[i].temp.max - 273.15) * 9/5 + 32) + "\xB0");
+// "\xB0" this puts in the degrees symbol
