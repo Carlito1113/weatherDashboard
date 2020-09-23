@@ -1,15 +1,20 @@
-
 $(document).ready(function () {
 
+    
 
 $("#weather-btn").on("click", function(event) {
     event.preventDefault();
 
    var cityInput = $("#weather-input").val().trim();
     console.log(cityInput);
+
+    if (cityInput.val() === "") {
+        alert("You must enter a city");
+        return;
+    }
+
     currentWeather(cityInput);
     forecast(cityInput);
-
 
 })
 
@@ -25,6 +30,7 @@ function currentWeather(city) {
 
     })
 }
+
 function forecast(city) {
 
     $.ajax({
