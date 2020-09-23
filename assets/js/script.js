@@ -57,10 +57,26 @@ function forecast(city) {
     $.ajax({
         method: "GET",
         url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=2b082fc72e5c1ea2495f67dc43747872&units=imperial"
-    }).then(function (data){
-        console.log(data);
     })
+    .then(function (data) {
+        console.log(data);
+        // 
+        for (var i = 0; i != data.list.length; i = i + 8) {
+            // storing all info needed in an object
+            var cityInfo = {
+                date: data.list[i].dt_txt,
+                temp: data.list[i].main.temp,
+                humidity: data.list[i].main.humidity,
+                icon: data.list[i].weather[0].icon
+            }
+            var weatherIcon = "https:///openweathermap.org/img/w/" + cityInfo.icon + ".png";
+            // put the 5 day forecast on the page
+            appendForecast(weatherIcon, cityInfo.temp, cityInfo.humidity);
+        }
+    });
 }
+
+
 
 function appendForecast(icon, temp, humidity) {
 
@@ -89,6 +105,6 @@ function appendForecast(icon, temp, humidity) {
 });
 
 // use this calc to change the temp to F
-// $(".high-" + i).text("High: " + Math.floor((response.daily[i].temp.max - 273.15) * 9/5 + 32) + "\xB0");
-// response.daily[i].temp.max - 273.15) * 9/5 + 32) + "\xB0");
+// $(".high-" + i).text("High: " + Math.floor((data.daily[i].temp.max - 273.15) * 9/5 + 32) + "\xB0");
+// data.daily[i].temp.max - 273.15) * 9/5 + 32) + "\xB0");
 // "\xB0" this puts in the degrees symbol
