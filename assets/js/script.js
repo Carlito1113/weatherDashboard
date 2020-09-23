@@ -62,6 +62,20 @@ function forecast(city) {
     })
 }
 
+function appendForecast(icon, temp, humidity) {
+
+    var forecastDiv = $("<div>");
+    forecastDiv.addClass("col-sm-2");
+    var weatherIcon = $("<img>");
+    weatherIcon.attr("src", icon);
+    var weatherTemp = $("<p>");
+    weatherTemp.text("Temperature: " + temp + "F");
+    var weatherHum = $("<p>");
+    weatherHum.text("Humidity: " + humidity);
+
+    $(".forecastDivv").append(forecastDiv);
+    forecastDiv.append(weatherIcon, weatherTemp, weatherHum);
+}
 
 
 
@@ -72,8 +86,7 @@ function forecast(city) {
 
 
 
-
-})
+});
 
 // use this calc to change the temp to F
 // $(".high-" + i).text("High: " + Math.floor((response.daily[i].temp.max - 273.15) * 9/5 + 32) + "\xB0");
