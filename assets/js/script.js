@@ -24,9 +24,18 @@ function currentWeather(city) {
         method: "GET",
         url:"https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=2b082fc72e5c1ea2495f67dc43747872&units=imperial"
         
-    }).then(function(data){
+    }).then(function(data) {
 
         console.log(data);
+        
+        var cityObj = {
+            cityName: data.name,
+            cityTemp: data.main.temp,
+            cityHumidity: data.main.humidity,
+            cityWindSpeed: data.wind.speed,
+            cityUvIndex: data.coord,
+            cityWeatherIconName: data.weather[0].icon
+        }
 
     })
 }
