@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     
-
+// weather button
 $("#weather-btn").on("click", function(event) {
     event.preventDefault();
 
@@ -24,6 +24,7 @@ function currentWeather(city) {
         method: "GET",
         url:"https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=2b082fc72e5c1ea2495f67dc43747872&units=imperial"
         
+        // weather data function
     }).then(function(data) {
 
         console.log(data);
@@ -35,6 +36,7 @@ function currentWeather(city) {
             cityWindSpeed: data.wind.speed,
             cityWeatherIconName: data.weather[0].icon
         }
+        // latitude and longitude data pull
         var cityLon = data.coord.lon;
         var cityLat = data.coord.lat;
 
