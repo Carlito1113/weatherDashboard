@@ -8,7 +8,7 @@ $("#weather-btn").on("click", function(event) {
    var cityInput = $("#weather-input").val().trim();
     console.log(cityInput);
 
-    if (cityInput.val() === "") {
+    if (cityInput === "") {
         alert("You must enter a city");
         return;
     }
@@ -21,7 +21,7 @@ $("#weather-btn").on("click", function(event) {
 function currentWeather(city) {
 
     $.ajax({
-        method="GET",
+        method: "GET",
         url:"https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=2b082fc72e5c1ea2495f67dc43747872&units=imperial"
         
     }).then(function(data){
