@@ -54,6 +54,8 @@ function currentWeather(city) {
 
 function forecast(city) {
 
+    $(".forecastDivv").empty();
+
     $.ajax({
         method: "GET",
         url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=2b082fc72e5c1ea2495f67dc43747872&units=imperial"
@@ -75,8 +77,6 @@ function forecast(city) {
         }
     });
 }
-
-
 
 function appendForecast(icon, temp, humidity) {
 
