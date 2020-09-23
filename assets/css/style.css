@@ -5,7 +5,11 @@
    margin-bottom: -30px;
    background-color: #2f2f2f;
 }
-.search {
+
+.container {
     float: left;
+}
+
+.search {
     background-color: #eeeeee;
 }
